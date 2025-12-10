@@ -1,10 +1,12 @@
 #noinspection CucumberPlusUndefinedStep
 Feature: Register functionality
 
+@sanity
   Scenario: User should navigate to register page successfully
     When I click on register link
     Then I should see register text
-
+    
+@smoke
   Scenario: Validate mandatory fields
     When I click on register link
     And I click register button
@@ -13,7 +15,8 @@ Feature: Register functionality
     And I should see email error
     And I should see password error
     And I should see confirmPassword error
-
+    
+@regression
   Scenario: User should create account successfully
     When I click on register link
     And I select gender "Female"
