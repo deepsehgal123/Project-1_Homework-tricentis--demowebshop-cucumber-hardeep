@@ -1,16 +1,18 @@
 #noinspection CucumberPlusUndefinedStep
 Feature: Computer functionalities
 
+@sanity
   Scenario: User should navigate to computers page
     When I click on computers tab
     Then I should see computers text
-
+    
+@smoke
   Scenario: User should navigate to desktop page
     When I click on computers tab
     And I click desktops link
     Then I should see desktops text
 
-  @ComputerBuild
+@regression
   Scenario Outline: User should build computer successfully
     When I click on computers tab
     And I click desktops link
