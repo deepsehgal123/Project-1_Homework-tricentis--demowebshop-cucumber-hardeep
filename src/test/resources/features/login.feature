@@ -1,12 +1,13 @@
 #noinspection CucumberPlusUndefinedStep
 Feature: Login functionality
 
+@sanity
   Scenario: User should navigate to login page successfully
-    #noinspection CucumberPlusUndefinedStep
-    Given I am on the home page
+   Given I am on the home page
     When I click on login link
     Then I should see "Welcome, Please Sign In!"
-
+    
+@smoke
   Scenario: Verify error message with invalid credentials
     Given I am on the home page
     When I click on login link
@@ -14,7 +15,8 @@ Feature: Login functionality
     And I enter password "123456"
     And I click login button
     Then I should see error message "Login was unsuccessful"
-
+    
+@regression
   Scenario: User should login successfully with valid credentials
     Given I am on the home page
     When I click on login link
@@ -22,7 +24,8 @@ Feature: Login functionality
     And I enter password "Test1234"
     And I click login button
     Then logout link should be displayed
-
+    
+@regression
   Scenario: User should logout successfully
     Given I am logged in with valid credentials
     When I click logout link
